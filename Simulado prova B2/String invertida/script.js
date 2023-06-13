@@ -1,23 +1,30 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var stringInput = document.getElementById("string");
-    var invertButton = document.getElementById("btn-invert");
-    var resultDiv = document.getElementById("result");
+  // Obtém os elementos do HTML
+  var stringInput = document.getElementById("string");
+  var invertButton = document.getElementById("btn-invert");
+  var resultDiv = document.getElementById("result");
+  
+  // Adiciona um ouvinte de evento ao botão "Inverter"
+  invertButton.addEventListener("click", function() {
+    // Obtém a string digitada pelo usuário
+    var string = stringInput.value;
     
-    invertButton.addEventListener("click", function() {
-      var string = stringInput.value;
-      var invertedString = invertString(string);
-      // Escreve na tela a string que foi invertida
-      resultDiv.textContent = "String invertida: " + invertedString;
-    });
+    // Chama a função para inverter a string
+    var invertedString = invertString(string);
     
-    // Função para inverter a string, chamada pelo botão "Inverter"
-    function invertString(string) {
-      var inverted = "";
-      
-      for (var i = string.length - 1; i >= 0; i--) {
-        inverted += string.charAt(i);
-      }
-      
-      return inverted;
-    }
+    // Exibe o resultado invertido
+    resultDiv.textContent = "String invertida: " + invertedString;
   });
+  
+  // Função para inverter a string
+  function invertString(string) {
+    var inverted = "";
+    
+    // Percorre a string de trás para frente e concatena cada caractere
+    for (var i = string.length - 1; i >= 0; i--) {
+      inverted += string.charAt(i);
+    }
+    
+    return inverted;
+  }
+});
