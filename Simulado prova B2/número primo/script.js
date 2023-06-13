@@ -1,36 +1,39 @@
-// Puxa os dados
 document.addEventListener("DOMContentLoaded", function() {
-    var numberInput = document.getElementById("number");
-    var checkButton = document.getElementById("btn-check");
-    var resultDiv = document.getElementById("result");
+  // Obtém os elementos do HTML
+  var numberInput = document.getElementById("number");
+  var checkButton = document.getElementById("btn-check");
+  var resultDiv = document.getElementById("result");
+  
+  // Adiciona um ouvinte de evento ao botão "Verificar"
+  checkButton.addEventListener("click", function() {
+    // Obtém o número digitado pelo usuário
+    var number = Number(numberInput.value);
     
-    checkButton.addEventListener("click", function() {
-      var number = parseInt(numberInput.value);
-      // Busca o número inserido
-      if (isNaN(number)) {
-        resultDiv.textContent = "Por favor, insira um número válido.";
-      } 
-      // Escreve na tela caso o número seja menor ou igual a 1
-      else if (number <= 1) {
-        resultDiv.textContent = "O número deve ser maior que 1.";
-      } 
-      // Escreve na tela caso o número seja primo
-      else if (isPrime(number)) {
-        resultDiv.textContent = number + " é um número primo.";
-      } 
-      // Escreve na tela caso o número não seja primo
-      else {
-        resultDiv.textContent = number + " não é um número primo.";
-      }
-    });
-    
-    // Função para verificar se um número é primo
-    function isPrime(number) {
-      for (var i = 2; i < number; i++) {
-        if (number % i === 0) {
-          return false;
-        }
-      }
-      return true;
+    // Verifica se o número é primo e exibe o resultado
+    var isPrime = checkPrime(number);
+    if (isPrime) {
+      resultDiv.textContent = "O número " + number + " é primo.";
+    } else {
+      resultDiv.textContent = "O número " + number + " não é primo.";
     }
   });
+  
+  // Função para verificar se um número é primo
+  function checkPrime(number) {
+    // Verifica se o número é menor ou igual a 1
+    if (number <= 1) {
+      return false;
+    }
+    
+    // Percorre os números de 2 até a raiz quadrada do número
+    for (var i = 2; i <= Math.sqrt(number); i++) {
+      // Se o número é divisível por qualquer número dentro desse intervalo, não é primo
+      if (number % i === 0) {
+        return false;
+      }
+    }
+    
+    // Se não encontrou nenhum divisor, o número é primo
+    return true;
+  }
+});
