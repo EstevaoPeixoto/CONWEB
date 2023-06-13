@@ -1,0 +1,30 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#string-input {
+    margin-bottom: 20px;
+  }
+  
+  #string-input label {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  
+  #string-input input[type="text"] {
+    padding: 5px;
+    font-size: 16px;
+  }
+  
+  #string-input button {
+    padding: 5px 10px;
+    font-size: 16px;
+  }
+  
+  #result {
+    font-size: 18px;
+    font-weight: bold;
+  }
