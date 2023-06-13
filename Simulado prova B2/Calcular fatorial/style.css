@@ -1,0 +1,30 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#number-input {
+    margin-bottom: 20px;
+  }
+  
+  #number-input label {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  
+  #number-input input[type="number"] {
+    padding: 5px;
+    font-size: 16px;
+  }
+  
+  #number-input button {
+    padding: 5px 10px;
+    font-size: 16px;
+  }
+  
+  #result {
+    font-size: 18px;
+    font-weight: bold;
+  }
