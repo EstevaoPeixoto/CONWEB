@@ -1,0 +1,23 @@
+#password-input {
+    margin-bottom: 20px;
+  }
+  
+  #password-input label {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  
+  #password-input input[type="password"] {
+    padding: 5px;
+    font-size: 16px;
+  }
+  
+  #password-input button {
+    padding: 5px 10px;
+    font-size: 16px;
+  }
+  
+  #result {
+    font-size: 18px;
+    font-weight: bold;
+  }
